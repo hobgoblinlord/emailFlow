@@ -45,6 +45,7 @@
     _emailContentList =@[@[@"How's it going",@"brian.jpg",@"Just wanted to see what you are up to and how things have been. is everything ok in your corner of the world. hit me up with what's going on this weekend",@false,@"8:10p",@"Brian Goss",],
                          @[@"Who went to the party last night",@"jeff.jpg",@"If you went to the party did you see my keys?",@true,@"7:12p",@"Jeff Goss",],
                          @[@"Are you going to the meeting?",@"",@"Are you going to be here in time for the meeting? what time do you think you will get here if you are?",@false,@"5:14a",@"Nathan",]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +77,7 @@
     // Configure the cell...
     
     int row = [indexPath row];
-    if ([_emailContentList[row][3] isEqual: @true])
+    if ([_emailContentList[row][EMAIL_VIEW_READ] isEqual: @true])
     {
        
         cell.contentView.backgroundColor = [UIColor colorWithRed:239/255.0f green:239/255.0f blue:234/255.0f alpha:1.0f];
@@ -85,12 +86,12 @@
     }
     
     
-    cell.EmailTitle.text = _emailContentList[row][0];
-    cell.EmailDescription.text = _emailContentList[row][2];
-    cell.EmailAvatar.image = [UIImage imageNamed:_emailContentList[row][1]];
-    cell.EmailTime.text = _emailContentList[row][4];
-    cell.EmailNames.text = _emailContentList[row][5];
-    if([_emailContentList[row][1] isEqual: @""])
+    cell.EmailTitle.text = _emailContentList[row][EMAIL_VIEW_TITLE];
+    cell.EmailDescription.text = _emailContentList[row][EMAIL_VIEW_DESCRIPTION];
+    cell.EmailAvatar.image = [UIImage imageNamed:_emailContentList[row][EMAIL_VIEW_AVATAR]];
+    cell.EmailTime.text = _emailContentList[row][EMAIL_VIEW_TIME];
+    cell.EmailNames.text = _emailContentList[row][EMAIL_VIEW_NAMES];
+    if([_emailContentList[row][EMAIL_VIEW_AVATAR] isEqual: @""])
     {
         cell.EmailTitle.frame = CGRectMake(9.0f, 27.0f, 243.0f, 21.0f);
         

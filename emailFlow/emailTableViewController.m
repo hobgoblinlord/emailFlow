@@ -86,16 +86,28 @@
     }
     
     
-    cell.EmailTitle.text = _emailContentList[row][EMAIL_VIEW_TITLE];
+    cell.EmailTitle.text = @"";
     cell.EmailDescription.text = _emailContentList[row][EMAIL_VIEW_DESCRIPTION];
     cell.EmailAvatar.image = [UIImage imageNamed:_emailContentList[row][EMAIL_VIEW_AVATAR]];
     cell.EmailTime.text = _emailContentList[row][EMAIL_VIEW_TIME];
     cell.EmailNames.text = _emailContentList[row][EMAIL_VIEW_NAMES];
+    
+    int xpos = 49; //default x for title and names
+    
     if([_emailContentList[row][EMAIL_VIEW_AVATAR] isEqual: @""])
     {
-        cell.EmailTitle.frame = CGRectMake(9.0f, 27.0f, 243.0f, 21.0f);
-        
+        xpos = 9;// if there is no avatar image dropp the title and names to the left
     }
+    
+    // create the label for the email title
+    UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(xpos, 27, 243, 21)];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:15.0f];
+    label.textColor=[UIColor blackColor];
+    label.numberOfLines=1;
+    label.text = _emailContentList[row][EMAIL_VIEW_TITLE];
+    [cell.contentView addSubview: label];
+    
     return cell;
 }
 

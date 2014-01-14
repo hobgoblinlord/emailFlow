@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41A811F71883B99C00071D1B /* blueTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811F61883B99C00071D1B /* blueTri.png */; };
+		41A811F91883B9AA00071D1B /* orangeTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811F81883B9AA00071D1B /* orangeTri.png */; };
+		41A811FB1883B9D900071D1B /* greenTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811FA1883B9D900071D1B /* greenTri.png */; };
+		41A811FD1883B9DF00071D1B /* redTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811FC1883B9DF00071D1B /* redTri.png */; };
+		41A811FF1884747900071D1B /* NewMail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811FE1884747900071D1B /* NewMail@2x.png */; };
 		41EA334D187F9D95003A5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA334C187F9D95003A5088 /* Foundation.framework */; };
 		41EA334F187F9D95003A5088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA334E187F9D95003A5088 /* CoreGraphics.framework */; };
 		41EA3351187F9D95003A5088 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA3350187F9D95003A5088 /* UIKit.framework */; };
@@ -39,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41A811F61883B99C00071D1B /* blueTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueTri.png; sourceTree = "<group>"; };
+		41A811F81883B9AA00071D1B /* orangeTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeTri.png; sourceTree = "<group>"; };
+		41A811FA1883B9D900071D1B /* greenTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenTri.png; sourceTree = "<group>"; };
+		41A811FC1883B9DF00071D1B /* redTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redTri.png; sourceTree = "<group>"; };
+		41A811FE1884747900071D1B /* NewMail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewMail@2x.png"; sourceTree = "<group>"; };
 		41EA3349187F9D95003A5088 /* emailFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emailFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EA334C187F9D95003A5088 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41EA334E187F9D95003A5088 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,6 +74,7 @@
 		41EA3388187FA2E9003A5088 /* troy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = troy.png; sourceTree = "<group>"; };
 		41EA338D187FA3F0003A5088 /* emailTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emailTableCellController.h; sourceTree = "<group>"; };
 		41EA338E187FA3F0003A5088 /* emailTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emailTableCellController.m; sourceTree = "<group>"; };
+		41EA339318816015003A5088 /* orange.png.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = orange.png.pxm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +181,12 @@
 			isa = PBXGroup;
 			children = (
 				41EA3385187FA2E9003A5088 /* brian.jpg */,
+				41A811FA1883B9D900071D1B /* greenTri.png */,
+				41A811F61883B99C00071D1B /* blueTri.png */,
+				41A811FE1884747900071D1B /* NewMail@2x.png */,
+				41A811FC1883B9DF00071D1B /* redTri.png */,
+				41A811F81883B9AA00071D1B /* orangeTri.png */,
+				41EA339318816015003A5088 /* orange.png.pxm */,
 				41EA3386187FA2E9003A5088 /* jeff.jpg */,
 				41EA3387187FA2E9003A5088 /* nathan.jpg */,
 				41EA3388187FA2E9003A5088 /* troy.png */,
@@ -253,12 +270,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A811FF1884747900071D1B /* NewMail@2x.png in Resources */,
 				41EA3389187FA2E9003A5088 /* brian.jpg in Resources */,
+				41A811FB1883B9D900071D1B /* greenTri.png in Resources */,
+				41A811F91883B9AA00071D1B /* orangeTri.png in Resources */,
 				41EA338B187FA2E9003A5088 /* nathan.jpg in Resources */,
+				41A811F71883B99C00071D1B /* blueTri.png in Resources */,
 				41EA338A187FA2E9003A5088 /* jeff.jpg in Resources */,
 				41EA338C187FA2E9003A5088 /* troy.png in Resources */,
 				41EA3365187F9D95003A5088 /* Images.xcassets in Resources */,
 				41EA3357187F9D95003A5088 /* InfoPlist.strings in Resources */,
+				41A811FD1883B9DF00071D1B /* redTri.png in Resources */,
 				41EA3360187F9D95003A5088 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +512,7 @@
 				41EA337D187F9D95003A5088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41EA337E187F9D95003A5088 /* Build configuration list for PBXNativeTarget "emailFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +521,7 @@
 				41EA3380187F9D95003A5088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

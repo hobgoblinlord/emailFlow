@@ -16,10 +16,13 @@
 #define EMAIL_VIEW_READ 3
 #define EMAIL_VIEW_TIME 4
 #define EMAIL_VIEW_NAMES 5
+#define EMAIL_VIEW_ACCOUNT_FLAG 6
+#define EMAIL_VIEW_NEW_EMAIL 7
+#define EMAIL_VIEW_TOTAL_EMAIL 8
 
-@property (nonatomic, strong) NSArray *Title;
-@property (nonatomic, strong) NSArray *Description;
-@property (nonatomic, strong) NSArray *Avatar;
+
 @property (nonatomic, strong) NSArray *emailContentList;
+@property (nonatomic, strong) NSArray *emailAccountFlags;
+
 
 @end

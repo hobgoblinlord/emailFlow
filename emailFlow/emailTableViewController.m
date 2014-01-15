@@ -67,6 +67,8 @@
             //NSLog(@"long press on table view at row %d", indexPath.row);
             static NSString *CellIdentifier = @"emailTableCellController";
             emailTableCellController *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            
+            cell.cellModeFlag =@"deleteMenu";
             cell.EmailTitle.text = @"";
             cell.EmailDescription.text=@"";
             cell.EmailAvatar.image=[UIImage imageNamed:@""];
@@ -75,7 +77,7 @@
             cell.contentView.backgroundColor = [UIColor colorWithRed:122/255.0f green:122/255.0f blue:122/255.0f alpha:1.0f];
             
             // Draw the icons and place them according to screen width
-            int screenWidth = 320; // this will be replaced by an app constant
+            int screenWidth = [UIScreen mainScreen].bounds.size.width; // get the screen width
             int boxes = screenWidth/4;
             int padding = (boxes-36)/2;
             
@@ -200,7 +202,7 @@
     label2.text = [NSString stringWithFormat:@"%@/%@ %@", _emailContentList[row][EMAIL_VIEW_NEW_EMAIL],_emailContentList[row][EMAIL_VIEW_TOTAL_EMAIL], _emailContentList[row][EMAIL_VIEW_NAMES]];
     [cell.contentView addSubview: label2];
     cell.EmailAccountFlag.image = [UIImage imageNamed:_emailContentList[row][EMAIL_VIEW_ACCOUNT_FLAG]];
-    
+    cell.cellModeFlag = @"default";
     //long hold--------------------------------------------------------------------------
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     longPress.minimumPressDuration = 0.4;
@@ -212,11 +214,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //UIViewController *myViewController = [[UIViewController alloc] init];
-    //[self.navigationController pushViewController:myViewController animated:YES];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"emailView" bundle:nil];
-    EmailDetailViewController *viewController = (EmailDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"emailDetailView"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    static NSString *CellIdentifier = @"emailTableCellController";
+    emailTableCellController *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if([cell.cellModeFlag isEqual: @"default"])
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"emailView" bundle:nil];
+        EmailDetailViewController *viewController = (EmailDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"emailDetailView"];
+        [self presentViewController:viewController animated:YES completion:nil];
+    }
 }
 
 /*

@@ -16,4 +16,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *EmailTime;
 @property (strong, nonatomic) IBOutlet UILabel *EmailNames;
 @property (strong, nonatomic) IBOutlet UIImageView *EmailAccountFlag;
+@property (nonatomic, strong) NSString *cellModeFlag;
 @end

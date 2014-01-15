@@ -8,6 +8,8 @@
 
 #import "emailTableViewController.h"
 #import "emailTableCellController.h"
+#import "EmailDetailViewController.h"
+
 
 @interface emailTableViewController ()
 
@@ -48,6 +50,78 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) handleLongPress: (UIGestureRecognizer *)longPress{
+    if (longPress.state==UIGestureRecognizerStateBegan) {
+        CGPoint p = [longPress locationInView:self.tableView];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+        if (indexPath == nil){
+            NSLog(@"No Cell");
+        }
+        else{
+            //UIAlertView* mes=[[UIAlertView alloc] initWithTitle:@"LONG HOLD TEST"
+            ////message:@"This is longholding on cell" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            //[mes show];
+            //NSLog(@"long press on table view at row %d", indexPath.row);
+            static NSString *CellIdentifier = @"emailTableCellController";
+            emailTableCellController *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            cell.EmailTitle.text = @"";
+            cell.EmailDescription.text=@"";
+            cell.EmailAvatar.image=[UIImage imageNamed:@""];
+            cell.EmailTime.text=@"";
+            cell.EmailNames.text=@"";
+            cell.contentView.backgroundColor = [UIColor colorWithRed:122/255.0f green:122/255.0f blue:122/255.0f alpha:1.0f];
+            
+            // Draw the icons and place them according to screen width
+            int screenWidth = 320; // this will be replaced by an app constant
+            int boxes = screenWidth/4;
+            int padding = (boxes-36)/2;
+            
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(padding, 20, 36, 36)];
+            imgView.image = [UIImage imageNamed:@"Trash@2x.png"];
+            [cell.contentView addSubview: imgView];
+            imgView = [[UIImageView alloc] initWithFrame:CGRectMake(padding+boxes, 20, 36, 36)];
+            imgView.image = [UIImage imageNamed:@"Spam@2x.png"];
+            [cell.contentView addSubview: imgView];
+            imgView = [[UIImageView alloc] initWithFrame:CGRectMake(padding+(boxes*2), 20, 36, 36)];
+            imgView.image = [UIImage imageNamed:@"LabelHome@2x.png"];
+            [cell.contentView addSubview: imgView];
+            imgView = [[UIImageView alloc] initWithFrame:CGRectMake(padding+(boxes*3), 20, 36, 36)];
+            imgView.image = [UIImage imageNamed:@"LinkHome@2x.png"];
+            [cell.contentView addSubview: imgView];
+            
+            //draw the text labels for the icons
+            UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, boxes, 16)];
+            label.text = @"Delete";
+            label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
+            [cell.contentView addSubview: label];
+            
+            label = [[UILabel alloc] initWithFrame:CGRectMake(boxes, 60, boxes, 16)];
+            label.text = @"Spam";
+            label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
+            [cell.contentView addSubview: label];
+            
+            label = [[UILabel alloc] initWithFrame:CGRectMake(boxes*2, 60, boxes, 16)];
+            label.text = @"Label";
+            label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
+            [cell.contentView addSubview: label];
+            
+            label = [[UILabel alloc] initWithFrame:CGRectMake(boxes*3, 60, boxes, 16)];
+            label.text = @"Link";
+            label.textAlignment = NSTextAlignmentCenter;
+            label.textColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f];
+            [cell.contentView addSubview: label];
+            
+        }
+        
+       
+        
+    }
 }
 
 #pragma mark - Table view data source
@@ -126,7 +200,23 @@
     label2.text = [NSString stringWithFormat:@"%@/%@ %@", _emailContentList[row][EMAIL_VIEW_NEW_EMAIL],_emailContentList[row][EMAIL_VIEW_TOTAL_EMAIL], _emailContentList[row][EMAIL_VIEW_NAMES]];
     [cell.contentView addSubview: label2];
     cell.EmailAccountFlag.image = [UIImage imageNamed:_emailContentList[row][EMAIL_VIEW_ACCOUNT_FLAG]];
+    
+    //long hold--------------------------------------------------------------------------
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    longPress.minimumPressDuration = 0.4;
+    [cell addGestureRecognizer:longPress];
+    //-----------------------------------------------------------------------------------
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //UIViewController *myViewController = [[UIViewController alloc] init];
+    //[self.navigationController pushViewController:myViewController animated:YES];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"emailView" bundle:nil];
+    EmailDetailViewController *viewController = (EmailDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"emailDetailView"];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 /*

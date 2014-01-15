@@ -12,13 +12,18 @@
 		41A811FB1883B9D900071D1B /* greenTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811FA1883B9D900071D1B /* greenTri.png */; };
 		41A811FD1883B9DF00071D1B /* redTri.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811FC1883B9DF00071D1B /* redTri.png */; };
 		41A811FF1884747900071D1B /* NewMail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A811FE1884747900071D1B /* NewMail@2x.png */; };
+		41A812021885027D00071D1B /* EmailDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A812011885027D00071D1B /* EmailDetailViewController.m */; };
+		41AF45CD188728990029490E /* Spam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AF45CC188728990029490E /* Spam@2x.png */; };
+		41AF45CF188728AD0029490E /* Trash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AF45CE188728AD0029490E /* Trash@2x.png */; };
+		41AF45D1188728D00029490E /* LinkHome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AF45D0188728D00029490E /* LinkHome@2x.png */; };
+		41AF45D31887294E0029490E /* LabelHome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41AF45D21887294E0029490E /* LabelHome@2x.png */; };
 		41EA334D187F9D95003A5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA334C187F9D95003A5088 /* Foundation.framework */; };
 		41EA334F187F9D95003A5088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA334E187F9D95003A5088 /* CoreGraphics.framework */; };
 		41EA3351187F9D95003A5088 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA3350187F9D95003A5088 /* UIKit.framework */; };
 		41EA3357187F9D95003A5088 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41EA3355187F9D95003A5088 /* InfoPlist.strings */; };
 		41EA3359187F9D95003A5088 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA3358187F9D95003A5088 /* main.m */; };
 		41EA335D187F9D95003A5088 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA335C187F9D95003A5088 /* AppDelegate.m */; };
-		41EA3360187F9D95003A5088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EA335E187F9D95003A5088 /* Main.storyboard */; };
+		41EA3360187F9D95003A5088 /* emailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EA335E187F9D95003A5088 /* emailView.storyboard */; };
 		41EA3365187F9D95003A5088 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41EA3364187F9D95003A5088 /* Images.xcassets */; };
 		41EA336C187F9D95003A5088 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA336B187F9D95003A5088 /* XCTest.framework */; };
 		41EA336D187F9D95003A5088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA334C187F9D95003A5088 /* Foundation.framework */; };
@@ -49,6 +54,12 @@
 		41A811FA1883B9D900071D1B /* greenTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenTri.png; sourceTree = "<group>"; };
 		41A811FC1883B9DF00071D1B /* redTri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redTri.png; sourceTree = "<group>"; };
 		41A811FE1884747900071D1B /* NewMail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewMail@2x.png"; sourceTree = "<group>"; };
+		41A812001885027D00071D1B /* EmailDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailDetailViewController.h; sourceTree = "<group>"; };
+		41A812011885027D00071D1B /* EmailDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailDetailViewController.m; sourceTree = "<group>"; };
+		41AF45CC188728990029490E /* Spam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spam@2x.png"; sourceTree = "<group>"; };
+		41AF45CE188728AD0029490E /* Trash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trash@2x.png"; sourceTree = "<group>"; };
+		41AF45D0188728D00029490E /* LinkHome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LinkHome@2x.png"; sourceTree = "<group>"; };
+		41AF45D21887294E0029490E /* LabelHome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LabelHome@2x.png"; sourceTree = "<group>"; };
 		41EA3349187F9D95003A5088 /* emailFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emailFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EA334C187F9D95003A5088 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41EA334E187F9D95003A5088 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,7 +70,7 @@
 		41EA335A187F9D95003A5088 /* emailFlow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "emailFlow-Prefix.pch"; sourceTree = "<group>"; };
 		41EA335B187F9D95003A5088 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		41EA335C187F9D95003A5088 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		41EA335F187F9D95003A5088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41EA335F187F9D95003A5088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/emailView.storyboard; sourceTree = "<group>"; };
 		41EA3364187F9D95003A5088 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		41EA336A187F9D95003A5088 /* emailFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = emailFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EA336B187F9D95003A5088 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -136,12 +147,14 @@
 			children = (
 				41EA335B187F9D95003A5088 /* AppDelegate.h */,
 				41EA335C187F9D95003A5088 /* AppDelegate.m */,
-				41EA335E187F9D95003A5088 /* Main.storyboard */,
+				41EA335E187F9D95003A5088 /* emailView.storyboard */,
 				41EA3364187F9D95003A5088 /* Images.xcassets */,
 				41EA3381187F9ED6003A5088 /* emailTableViewController.h */,
 				41EA3382187F9ED6003A5088 /* emailTableViewController.m */,
 				41EA338D187FA3F0003A5088 /* emailTableCellController.h */,
 				41EA338E187FA3F0003A5088 /* emailTableCellController.m */,
+				41A812001885027D00071D1B /* EmailDetailViewController.h */,
+				41A812011885027D00071D1B /* EmailDetailViewController.m */,
 				41EA3353187F9D95003A5088 /* Supporting Files */,
 			);
 			path = emailFlow;
@@ -181,7 +194,11 @@
 			isa = PBXGroup;
 			children = (
 				41EA3385187FA2E9003A5088 /* brian.jpg */,
+				41AF45CE188728AD0029490E /* Trash@2x.png */,
+				41AF45D0188728D00029490E /* LinkHome@2x.png */,
+				41AF45D21887294E0029490E /* LabelHome@2x.png */,
 				41A811FA1883B9D900071D1B /* greenTri.png */,
+				41AF45CC188728990029490E /* Spam@2x.png */,
 				41A811F61883B99C00071D1B /* blueTri.png */,
 				41A811FE1884747900071D1B /* NewMail@2x.png */,
 				41A811FC1883B9DF00071D1B /* redTri.png */,
@@ -273,15 +290,19 @@
 				41A811FF1884747900071D1B /* NewMail@2x.png in Resources */,
 				41EA3389187FA2E9003A5088 /* brian.jpg in Resources */,
 				41A811FB1883B9D900071D1B /* greenTri.png in Resources */,
+				41AF45CD188728990029490E /* Spam@2x.png in Resources */,
 				41A811F91883B9AA00071D1B /* orangeTri.png in Resources */,
 				41EA338B187FA2E9003A5088 /* nathan.jpg in Resources */,
+				41AF45D31887294E0029490E /* LabelHome@2x.png in Resources */,
 				41A811F71883B99C00071D1B /* blueTri.png in Resources */,
+				41AF45D1188728D00029490E /* LinkHome@2x.png in Resources */,
+				41AF45CF188728AD0029490E /* Trash@2x.png in Resources */,
 				41EA338A187FA2E9003A5088 /* jeff.jpg in Resources */,
 				41EA338C187FA2E9003A5088 /* troy.png in Resources */,
 				41EA3365187F9D95003A5088 /* Images.xcassets in Resources */,
 				41EA3357187F9D95003A5088 /* InfoPlist.strings in Resources */,
 				41A811FD1883B9DF00071D1B /* redTri.png in Resources */,
-				41EA3360187F9D95003A5088 /* Main.storyboard in Resources */,
+				41EA3360187F9D95003A5088 /* emailView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +325,7 @@
 				41EA338F187FA3F0003A5088 /* emailTableCellController.m in Sources */,
 				41EA3383187F9ED6003A5088 /* emailTableViewController.m in Sources */,
 				41EA3359187F9D95003A5088 /* main.m in Sources */,
+				41A812021885027D00071D1B /* EmailDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,12 +356,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		41EA335E187F9D95003A5088 /* Main.storyboard */ = {
+		41EA335E187F9D95003A5088 /* emailView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				41EA335F187F9D95003A5088 /* Base */,
 			);
-			name = Main.storyboard;
+			name = emailView.storyboard;
 			sourceTree = "<group>";
 		};
 		41EA3374187F9D95003A5088 /* InfoPlist.strings */ = {

@@ -12,7 +12,7 @@
 
 
 @interface emailTableViewController ()
-
+    
 @end
 
 @implementation emailTableViewController
@@ -43,6 +43,7 @@
                          @[@"Who went to the party last night",@"jeff.jpg",@"If you went to the party did you see my keys?",@true,@"7:12p",@"Jeff Goss",@"redTri.png",@"0",@"4",],
                          @[@"Are you going to the meeting?",@"",@"Are you going to be here in time for the meeting? what time do you think you will get here if you are?",@false,@"5:14a",@"Nathan",@"blueTri.png",@"3",@"20"]];
     
+    _currentlySelectedListCell = -1;
     
 }
 
@@ -61,10 +62,11 @@
             NSLog(@"No Cell");
         }
         else{
+            [self setCurrentlySelectedListCell:indexPath.row];
             //UIAlertView* mes=[[UIAlertView alloc] initWithTitle:@"LONG HOLD TEST"
             ////message:@"This is longholding on cell" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             //[mes show];
-            //NSLog(@"long press on table view at row %d", indexPath.row);
+            //NSLog(@"long press on table view at row %d", _currentlySelectedListCell);
             static NSString *CellIdentifier = @"emailTableCellController";
             emailTableCellController *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
             
@@ -141,6 +143,18 @@
     return _emailContentList.count;
 }
 
+- (NSInteger) getCurrentlySelectedListCell
+{
+    
+    // Return the number of rows in the section.
+    return _currentlySelectedListCell;
+}
+
+- (void) setCurrentlySelectedListCell:(int)cellValue
+{
+    _currentlySelectedListCell = cellValue;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"emailTableCellController";
@@ -214,10 +228,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"emailTableCellController";
-    emailTableCellController *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if([cell.cellModeFlag isEqual: @"default"])
+    //static NSString *CellIdentifier = @"emailTableCellController";
+    emailTableCellController *cell = (emailTableCellController *)[(UITableView *)self.view cellForRowAtIndexPath:indexPath];
+    int theCurrentCell = [self getCurrentlySelectedListCell];
+    if(theCurrentCell > -1)
     {
+        UIAlertView* mes=[[UIAlertView alloc] initWithTitle:@"cell mode" message:[NSString stringWithFormat:@"cell %i is in longpress mode", theCurrentCell] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [mes show];
+        
+    }
+    else if([cell.cellModeFlag isEqual: @"default"] || [cell.cellModeFlag isEqual: @""])
+    {
+       
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"emailView" bundle:nil];
         EmailDetailViewController *viewController = (EmailDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"emailDetailView"];
         [self presentViewController:viewController animated:YES completion:nil];

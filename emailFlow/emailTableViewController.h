@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) NSArray *emailContentList;
 @property (nonatomic, strong) NSArray *emailAccountFlags;
+@property (nonatomic, assign) int currentlySelectedListCell;
+
 
 
 
